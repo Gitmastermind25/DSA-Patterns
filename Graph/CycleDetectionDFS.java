@@ -7,7 +7,7 @@ public class CycleDetectionDFS {
         visited[node] = true;
         for(int next: graph.get(node)){
             if(next==parent){
-                return true;
+                continue ;
             }
             if(visited[next]){
                 return true;
@@ -19,10 +19,10 @@ public class CycleDetectionDFS {
         return false;
     }
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         int n =4;
         ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-        for(int i=0;i<=n;i++){
+        for(int i=0;i<n;i++){
             graph.add(new ArrayList<>());
         }
         graph.get(0).add(1);
